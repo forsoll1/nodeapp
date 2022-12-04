@@ -1,0 +1,14 @@
+<div class="form-group">
+    <label for="author">Author</label>
+    <input required value="<%- blog.author %>" type="text" name="author" id="author" class="form-control"> 
+</div> 
+<div class="form-group">   
+    <label for="title">Title</label>
+    <input required value="<%- blog.title %>" type="text" name="title" id="title" class="form-control"> 
+</div>
+<div class="form-group mb-2">
+    <label for="blogtext">Blog text</label>
+    <textarea required name="blogtext" id="blogtext" class="form-control"><%- blog.blogtext %></textarea>
+</div>
+<button type="submit" class="btn btn-primary">Save</button>
+<a href="/blogs" class="btn btn-secondary">Cancel</a>
