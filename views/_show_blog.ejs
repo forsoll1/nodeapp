@@ -1,0 +1,17 @@
+<% blogs.forEach(blog => { %>
+    <div class="card mt-4">
+        <div class="card-body">
+            <h4 class="card-title"><%= blog.title %></h4>
+            <div class="card-subtitle text-muted mb-2">
+                Author: <%= blog.author %>
+            </div>
+            <pre><div class="card-text mb-2"><%= blog.blogtext %></div></pre>
+            <div class="card-subtitle text-muted mt-4">
+                Created: <%= blog.createdAt.toLocaleDateString() %>
+            </div>
+            <a href="<%= blog.site %>/edit/<%= blog.id%>" class="btn btn-secondary">Edit</a>
+            <form action="<%= blog.site %>/<%= blog.id %>?_method=DELETE" method="POST" class="d-inline"><button type="submit" class="btn btn-danger">Delete</button></form>
+        </div>    
+    </div>
+    <%
+})%>

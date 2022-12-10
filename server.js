@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const blogRouter = require("./routes/blogRoutes")
+const dockerRouter = require("./routes/dockerRoutes")
+const composeRouter = require("./routes/composeRoutes")
+const microRouter = require("./routes/microRoutes")
 const methodOverride = require('method-override')
 
 
@@ -11,6 +13,7 @@ app.enable("trust proxy")
 app.use(express.json())
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: false}))
+app.use(express.static('img'))
 app.set('view engine', 'ejs')
 
 
@@ -33,7 +36,9 @@ app.get("/", async (req, res) => {
     res.render('index')
 });
 
-app.use("/blogs", blogRouter)
+app.use("/docker", dockerRouter)
+app.use("/compose", composeRouter)
+app.use("/micro", microRouter)
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`listening on port ${port}`));

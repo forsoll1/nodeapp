@@ -1,6 +1,10 @@
 const mongoose = require("mongoose")
 
 const blogSchema = new mongoose.Schema({
+    site:{
+        type: String,
+        required: true,
+    },
     author:{
         type: String,
         required: true,

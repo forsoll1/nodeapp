@@ -1,5 +1,6 @@
-FROM node:15
+FROM node
 WORKDIR /app
 COPY package.json .
-RUN npm install
+ARG NODE_ENV
+RUN  npm install
 COPY . ./
