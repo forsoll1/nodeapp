@@ -25,7 +25,7 @@ router.post("/", async (req, res) => {
 })
 router.get("/edit/:id", async (req,res) => {
     const blog = await Blog.findById(req.params.id)
-    res.render('edit', { blog:blog })
+    res.render('edit', { blog:blog }) 
 })
   
   router.put('/:id', async (req, res, ) => {

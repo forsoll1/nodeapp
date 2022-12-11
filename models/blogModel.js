@@ -1,3 +1,5 @@
+// Luodaan tietokantaa varten Model, jota käytetään yksittäisiä muistiinpanoja tallennettaessa
+
 const mongoose = require("mongoose")
 
 const blogSchema = new mongoose.Schema({
