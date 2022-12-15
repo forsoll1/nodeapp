@@ -15,16 +15,48 @@
         <a href="/" class="btn btn-success">Alkuun</a> 
         <div class="card mt-4">
             <div class="card-body">
-                <h4 class="card-title">Väliotsikko 1</h4>
+                                <h4 class="card-title">Docker Peruskäyttö</h4>
                 <div class="card-text mb-2">
-                    Sisältö tähän.
+                    Docker on suosittu työkalu sovellusten hallintaan ja jakeluun, erityisesti niille, jotka koostuvat useista säiliöistä. Se tarjoaa tasalaatuisen ympäristön sovellusten suorittamiseen ja testaamiseen sekä tekee sovellusten monimutkaisten komponenttien ja riippuvuuksien hallinnasta helpompaa.
                 </div>
-                <h4 class="card-title">Väliotsikko 2</h4>
+                <h4 class="card-title">Dockerin asentaminen</h4>
                 <div class="card-text mb-2">
-                    Sisältö tähän.
+Ensimmäinen vaihe Dockerin käytössä on sen asentaminen järjestelmään. Docker on saatavilla laajalla alustavalikoimalla, mukaan lukien Linux, Mac ja Windows. Voit ladata ja asentaa Dockerin viralliselta verkkosivulta tai käyttää paketinhallintajärjestelmää, jos käytät Linuxia.
+
+Kun Docker on asennettu, voit käyttää dockerin komentorivikäyttöliittymää (CLI) Dockerin hallinnointiin ja kanssakäymiseen. Tämä CLI tarjoaa valikoiman komentoja Docker-kuvien, säiliöiden ja verkkojen hallinnointiin ja on pääasiallinen tapa käyttää Dockeria.
+
                 </div>
-            </div>    
-        </div>
+                <h4 class="card-title">Docker-kuvat</h4>
+                <div class="card-text mb-2">
+                    Docker-kuva on malli, jota käytetään Docker-säiliöiden luomiseen. Kuva luodaan rakentamalla se Dockerfile-tiedostosta, joka määrittää ohjeet kuvan luomiseksi. Esimerkiksi Dockerfile voisi
+määrittää käytettävän peruskuvan, asennettavat paketit ja käynnistettäessä suoritettavat komennot.
+</div>
+<h4 class="card-title">Kuvien hakeminen ja suorittaminen</h4>
+<div class="card-text mb-2">
+Ennen kuin voit käyttää kuvaa säiliön luomiseen, sinun on ensin haettava se rekisteristä. Dockerilla on julkinen rekisteri nimeltä Docker Hub, joka sisältää suuren määrän käytettävissä olevia kuvia. Voit käyttää docker pull -komentoa lataamaan kuvan Docker Hubista tai yksityisestä rekisteristä, johon sinulla on pääsy.
+</div>
+<h4 class="card-title">Docker Verkot</h4>
+<div class="card-text mb-2">
+Yksi näistä ominaisuuksista on mahdollisuus luoda ja hallita verkkoja. Oletuksena samaan Docker-verkkoon liitetyt säiliöt voivat viestiä keskenään käyttäen säiliöiden nimiä. Tämä mahdollistaa säiliöiden helpon liittämisen toisiinsa ja tarjoaa yksinkertaisen tavan toteuttaa mikro-palveluarkkitehtuureja.
+
+Voit kuitenkin myös luoda mukautettuja verkkoja Dockerissa, mikä voi olla hyödyllistä monimutkaisempien verkkotilanteiden toteuttamisessa. Esimerkiksi voit luoda verkon, joka kattaa useita isäntiä.
+
+Voit käyttää docker network -komentoja Dockerin verkkojen hallinnointiin. Esimerkiksi voit käyttää docker network create -komentoa luodaksesi uuden verkon ja docker network connect -komentoa liittääksesi säiliön verkkoon.
+</div>
+<h4 class="card-title">Docker-tiedostojärjestelmän laajennukset</h4>
+<div class="card-text mb-2">
+Toinen hyödyllinen Dockerin ominaisuus on tietojen hallinta. Tiedostojärjestelmä (Volume) on pysyvä säilytysalue, jota Docker hallinnoi ja jota säiliöt voivat käyttää tietojen tallentamiseen. Tämä voi olla hyödyllistä tietojen tallentamisessa, jotka on säilytettävä säiliöiden uudelleenkäynnistysten yhteydessä tai tietojen jakamisessa säiliöiden välillä.
+
+Voit käyttää docker volume -komentoja Dockerin tietojen hallinnoimiseen. Esimerkiksi voit käyttää docker volume create -komentoa luodaksesi uuden tiedostojärjestelmän ja docker volume inspect -komentoa tarkastellaksesi tiedostojärjestelmän yksityiskohtia.
+
+Voit myös määrittää tiedostojärjestelmän Dockerfile- tai Docker Compose -tiedostossa, mikä mahdollistaa tietojen automaattisen luomisen ja liittämisen, kun säiliö käynnistetään. Tämä voi olla hyödyllistä tietojen hallinnoinnin yksinkertaistamisessa sovelluksissasi.
+</div>
+<h4 class="card-title">Yhteenveto</h4>
+<div class="card-text mb-2">
+Yhteenvetona Docker on tehokas ja monipuolinen työkalu sovellusten hallintaan ja jakeluun. Se tarjoaa tasalaatuisen ja eristetyn ympäristön sovellusten suorittamiseen ja tekee sovellusten monimutkaisten komponenttien ja riippuvuuksien hallinnasta helpompaa. 
+</div>
+</div>
+</div>
         <%- include('_show_blog') %>
         <h4 class="mb-2 mt-2">Uusi muistiinpano</h4>
         <form action="/docker" method="POST">
