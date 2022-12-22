@@ -15,13 +15,38 @@
         <a href="/" class="btn btn-success">Alkuun</a> 
         <div class="card mt-4">
             <div class="card-body">
-                <h4 class="card-title">Väliotsikko 1</h4>
+                <h4 class="card-title">Docker Composen käyttö</h4>
                 <div class="card-text mb-2">
-                    Sisältö tähän.
+                    Docker Compose on Docker-työkalu, joka auttaa monen säiliön yhtäaikaisessa komentamisessa, määrittelyssä ja luomisessa.<br>
+		    Docker Compose-tiedostot luodaan YAML:lla Docker Composeen tarkoitetulla syntaksilla. Kun tiedosto on luotu, voidaan
+		    sitä komentaa komentoriviltä helposti yksinkertaisilla käskyillä.<br>
+		    Composen etu on, että voidaan määrittää sovelluspino tiedostoon ja pitää sitä projektin repositoryssa niin,että
+		    jonkun muun on helppo osallistua projektiin. Toisen kehittäjän tarvitsee vain kloonata repo ja startata Docker Composella.
+		   
                 </div>
-                <h4 class="card-title">Väliotsikko 2</h4>
+                <h4 class="card-title">Docker Composen asennus</h4>
                 <div class="card-text mb-2">
-                    Sisältö tähän.
+                    Docker Compose tulee Windowsille tai Macille asennetun Docker Desktopin mukana. Linux-koneelle Docker Compose binäärin saa
+		    ladattua Docker Compose GitHub-reposta.<br> <a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/ </a>
+                </div>
+		<h4 class="card-title">Docker Composen-tiedoston luonti</h4>
+                <div class="card-text mb-2">
+		    Compose-tiedosto luodaan projektin juureen ja sen tulee olla nimetty - docker-compose.yaml(.yml).<br>
+		    Ensimmäiselle sisennykselle tiedostoon määritetään servicet eli toisin sanoen kontit, jotka halutaan ajaa.<br>
+		    Seuraavaksi sisennettynä tulee itse service, jolle voidaan määrittää mikä tahansa nimi, josta tulee verkkoalias.<br>
+		    Servicelle määritetään seuraavaan sisennykseen image, komento jota kontissa ajetaan, portti, työhakemisto, levyt ja 
+		    ympäristömuuttujeat.<br>
+		    Ensimmäisen sisennyksen (servicen) tasolle luodaan levyt, jota ei automaattisesti luoda, kun ajetaan Composella. Jos käytetään vain
+		    levyn nimeä tulee oletusasetukset voimaan. Tätä voidaan myös usealla eri tavalla konfiguroida levyä.
+                </div>
+                <h4 class="card-title">Compose stackin ajaminen</h4>
+                <div class="card-text mb-2">
+		    Ensiksi navigoidaan projektin juureen, johon luotiin docker-compose.yaml.<br>
+		    Tämän jälkeen voidaan vielä varmistaa, että kontteja jo ajossa <b>docker ps</b> -komennolla.<br>
+		    Nyt voidaan laittaa <b>docker-compose up -d</b> -komennolla kontti tai kontit taustalle ajoon.<br>
+		    Docker Compose myös tekee automaattisesti verkon konttistackille.<br>
+		    Logeja voidaan tarkastella helposti käyttäen <b>docker compose logs <app></b> -komentoa.<br>
+		    Imagejen päivittäminen onnistuu myös helposti <b>docker compose pull ; docker compose up -d</b> pysäytetyille konteille.
                 </div>
             </div>    
         </div>
