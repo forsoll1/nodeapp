@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const dockerRouter = require("./routes/dockerRoutes")
 const composeRouter = require("./routes/composeRoutes")
-const microRouter = require("./routes/microRoutes")
 const methodOverride = require('method-override')
 
 // Haetaan Mongo:n määritykset niitä varten tehdystä tiedostosta
@@ -43,7 +42,6 @@ app.get("/", async (req, res) => {
 // Asetetaan Express routes:t käyttöön eri verkko-osoitteisiin
 app.use("/docker", dockerRouter)
 app.use("/compose", composeRouter)
-app.use("/micro", microRouter)
 
 
 // Asetetaan applikaatio kuuntelemaan 3000-porttia
