@@ -174,10 +174,8 @@ Sivuston sisäistä logiikkaa ohjataan Routes-kansiossa olevilla router-objektei
 ```js
 const dockerRouter = require("./routes/dockerRoutes")
 const composeRouter = require("./routes/composeRoutes")
-const microRouter = require("./routes/microRoutes")
 
 app.use("/docker", dockerRouter)
 app.use("/compose", composeRouter)
-app.use("/micro", microRouter)
 ```
 Routerien määrittelyissä ohjataan tyypillisten REST-metodien toimintaa. Pääasiallisesti ne ohjaavat liikenteen oikeille sivuille ja hoitavat Mongo-objektien tallenus- muokkaus ja poisto-operaatiot. 
